@@ -111,11 +111,11 @@ $discount_price = 0.00;
 
                           @foreach($orderDetails->orderItems as  $key => $value) 
                             @if(!empty($value->plan) && !empty($value->services) && !empty($value->addons))
-                            <?php $val = 4; ?>
-                            @elseif(!empty($value->plan) && !empty($value->services) && empty($value->addons))
                             <?php $val = 3; ?>
+                            @elseif(!empty($value->plan) && !empty($value->services) && empty($value->addons))
+                            <?php $val = 2; ?>
                             @elseif(empty($value->plan) && !empty($value->addons) && !empty($value->addons))
-                            <?php $val = 3;?>
+                            <?php $val = 2;?>
                             @else
                             <?php $val = 1; ?>
                             @endif
@@ -154,8 +154,9 @@ $discount_price = 0.00;
                               <?php $text = 'Registration'; ?>
                             @endif
                             <tr data-id="{{ isset($value['id']) ? $value['id'] : $value['services'] }}">
-                              <td rowspan="{{ $val }}">{{ $key + 1 }}</td>
-                              <td>@if(!empty($value->plan))
+                              <td rowspan="{{ $val }}">{{ $key + 1 }} </td>
+                              @if(!empty($value->plan))
+                              <td>
                                     <b>Service Code: </b> <span class="sitecolor">{{!empty($value->plan->service_code) ? $value->plan->service_code : ''}}</span><br/>
                                     <b>Hosting Plan:</b> <span class="sitecolor caps">{{!empty($value->plan->plan_name) ? $value->plan->plan_name : ''}}</span><br/>
                                    @php
@@ -176,8 +177,9 @@ $discount_price = 0.00;
                                     @endforeach
                                     </ul>
                                     @endif
-                                  @endif</td>
-                                <td>@if(!empty($value->plan))
+                                </td>
+                                
+                                <td>
 
                                   @if($main_price != $value['price'])
                                  
@@ -188,21 +190,17 @@ $discount_price = 0.00;
                                     {{ $value['cycle'] }} <?php if($value['cycle'] == 1) echo "year"; else echo "years"; ?> <br/>
                                     <?php $domain_year = ''; ?>
                                   @endif
-                                @else
-                                  <?php $domain_year = $value['cycle']; ?>
-                                @endif</td>
-                                <td>@if(!empty($value->plan))
-                                @if($main_price != $value['price']) 
-                                  {{$value['qty']}} 
-                                  <?php $domain_qty = $value['qty']; ?>
-                                @else
-                                  {{$value['qty']}}
-                                  <?php $domain_qty = ''; ?>
-                                @endif
-                                @else
-                                <?php $domain_qty = $value['qty']; ?>
-                                @endif</td>
-                                <td>@if(!empty($value->plan))
+                                </td>
+                                <td>
+                                  @if($main_price != $value['price']) 
+                                    {{$value['qty']}} 
+                                    <?php $domain_qty = $value['qty']; ?>
+                                  @else
+                                    {{$value['qty']}}
+                                    <?php $domain_qty = ''; ?>
+                                  @endif
+                                </td>
+                                <td>
                                   <?php 
                                     if($main_price != $value['price']){ ?>
                                       RM {{ $main_price }} 
@@ -212,16 +210,26 @@ $discount_price = 0.00;
                                       RM {{ number_format(($value['price']?$value['price']:'0'),2)}} <br>
                                       <?php $d_price = ''; ?>
                                    <?php } ?>
+                                </td>
+                              </tr>
+
                                   @else
-                                    <?php $d_price =  number_format(($value['price']?$value['price']:'0'),2); ?> 
+                                  <?php 
+                                  $domain_year = $value['cycle'];
+                                  $domain_qty = $value['qty'];
+                                  $d_price =  number_format(($value['price']?$value['price']:'0'),2);
+                                   ?>
                                  
-                                  @endif</td>
-                            </tr>
-                            <tr>
-                              <td><?php if(isset($value->addons) && $value->addons != "" && $value->addons != null){
-                                    $addons_vl = explode(',', $value->addons); ?>
+                                   <tr>
+                                  <td>
+                              @endif
+                             
+                              <?php if(isset($value->addons) && $value->addons != "" && $value->addons != null){ ?>
+                              
+                              
+                                   <?php $addons_vl = explode(',', $value->addons); ?>
                                     <b>Domain Addons:</b>
-                                    <ul style="margin-bottom:0">
+                                    <ul style="margin-bottom:1px">
                                       @foreach($addons_vl as $addon)
                                         @foreach($domain_pricings as $dprice)
                                           <?php 
@@ -234,17 +242,11 @@ $discount_price = 0.00;
                                         @endforeach
                                       @endforeach
                                     </ul>
-                                  <?php } ?>
+                                  
                                 </td>
-                              <td><?php if(isset($value['addons']) && $value['addons'] != "" && $value['addons'] != null){ ?>
-                                 
-                                        <?php echo "&nbsp;&nbsp;";
-                                       ?>
-                                 <?php } ?>
-                              </td>
+                              <td><?php echo "&nbsp;&nbsp;";?></td>
                               <td>
-                                <?php if(isset($value['addons']) && $value['addons'] != "" && $value['addons'] != null){
-                                    $addons_vl = explode(',', $value['addons']); ?>
+                                
                                     <br>
                                     <ul style="margin-bottom:0"> 
                                     @foreach($addons_vl as $addon)
@@ -256,12 +258,8 @@ $discount_price = 0.00;
                                       @endforeach
                                     @endforeach
                                     </ul>
-
-                                    <?php } ?>
                               </td>
-                              <td><?php
-                                  if(isset($value['addons']) && $value['addons'] != "" && $value['addons'] != null){
-                                    $addons_vl = explode(',', $value['addons']); ?>
+                              <td>
                                     <br>
                                     <ul style="margin-bottom:0"> 
                                     @foreach($addons_vl as $addon)
@@ -272,10 +270,14 @@ $discount_price = 0.00;
                                       @endforeach
                                     @endforeach
                                     </ul>
-                                  <?php } ?>
+                                  
                               </td>
                             </tr>
+                              <?php } ?>
+                              
+
                             <tr>
+                              
                               <td><b>Domain {{ $text }}:</b> <span class="sitecolor">{{$value['services']}}</span></td>
                               <td>@if(!empty($domain_year))
                                  

@@ -1,3 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,500;0,600;0,700;1,400&display=swap');
 body{font-family: 'Open Sans', sans-serif;}
 ul li{list-style: none;}
+.icon-list{padding-left: 0}
+.icon-list li{    display: flex;
+    align-items: flex-start;
+    margin-bottom: .25rem;}
+a{text-decoration: none;}
+.icon-list li::before{
+    content: '>';
+    display: block;
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-right: .5rem;
+    background: #00D;
+    border-radius: 50%;
+    color: #fff;
+    padding: 0px 9px;
+    font-weight: bold;
+    font-size: 20px;
+}
