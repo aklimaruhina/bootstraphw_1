@@ -46,6 +46,290 @@
         </div>
       </main>
     </div>
+    <div class="container">
+      <h2 class="mt-4">Container</h2>
+      <p>Containers are the most basic layout element in Bootstrap and are required when using our default grid system. Containers are used to contain, pad, and (sometimes) center the content within them. While containers can be nested, most layouts do not require a nested container.</p>
+      <h4>Responsive container</h4>
+      <p>Responsive containers allow you to specify a class that is 100% wide until the specified breakpoint is reached, after which we apply max-widths for each of the higher breakpoints. For example, .container-sm is 100% wide to start until the sm breakpoint is reached, where it will scale up with md, lg, xl, and xxl.</p>
+
+
+    </div>
+    <div class="container-sm themed-container">100% wide until small breakpoint</div>
+<div class="container-md themed-container">100% wide until medium breakpoint</div>
+<div class="container-lg themed-container">100% wide until large breakpoint</div>
+<div class="container-xl themed-container">100% wide until extra large breakpoint</div>
+<div class="container-xxl themed-container">100% wide until extra extra large breakpoint</div>
+<div class="container-fluid themed-container">.container-fluid</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="mt-4">Bootstrap grid examples</h2>
+      <h2 class="mt-4">Five grid tiers</h2>
+      <p>There are five tiers to the Bootstrap grid system, one for each range of devices we support. Each tier starts at a minimum viewport size and automatically applies to the larger devices unless overridden.</p>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4 themed-grid-col">.col-4</div>
+    <div class="col-4 themed-grid-col">.col-4</div>
+    <div class="col-4 themed-grid-col">.col-4</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 themed-grid-col">.col-sm-4</div>
+    <div class="col-sm-4 themed-grid-col">.col-sm-4</div>
+    <div class="col-sm-4 themed-grid-col">.col-sm-4</div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 themed-grid-col">.col-md-4</div>
+    <div class="col-md-4 themed-grid-col">.col-md-4</div>
+    <div class="col-md-4 themed-grid-col">.col-md-4</div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 themed-grid-col">.col-lg-4</div>
+    <div class="col-lg-4 themed-grid-col">.col-lg-4</div>
+    <div class="col-lg-4 themed-grid-col">.col-lg-4</div>
+  </div>
+  <div class="row">
+    <div class="col-xl-4 themed-grid-col">.col-xl-4</div>
+    <div class="col-xl-4 themed-grid-col">.col-xl-4</div>
+    <div class="col-xl-4 themed-grid-col">.col-xl-4</div>
+  </div>
+  <div class="row">
+    <div class="col-xxl-4 themed-grid-col">.col-xxl-4</div>
+    <div class="col-xxl-4 themed-grid-col">.col-xxl-4</div>
+    <div class="col-xxl-4 themed-grid-col">.col-xxl-4</div>
+  </div>
+  <div class="row mt-3">
+    <h2>Three columns</h2>
+    <div class="col-md-4 themed-grid-col">.col-md-4</div>
+    <div class="col-md-4 themed-grid-col">.col-md-4</div>
+    <div class="col-md-4 themed-grid-col">.col-md-4</div>
+  </div>
+  <div class="row mt-3">
+    <h2>Two columns</h2>
+    <div class="col-md-6 col-sm-6 col-12 themed-grid-col">.col-md-6 .col-sm-6 .col-12</div>
+    <div class="col-md-6 col-sm-6 col-12 themed-grid-col">.col-md-6 .col-sm-6 .col-12</div>
+  </div>
+  <div class="row mt-3">
+    <h2>Mixed: mobile, tablet, and desktop</h2>
+    <div class="col-md-8 col-12 themed-grid-col">.col-md-8  .col-12</div>
+    <div class="col-md-4 col-12 themed-grid-col">.col-md-4 .col-12</div>
+  </div>
+  <div class="row mt-3">
+    <h2>Mixed: mobile tablet and desktop</h2>
+    <div class="col-sm-6 col-lg-8 themed-grid-col">.col-sm-6 .col-lg-8</div>
+    <div class="col-6 col-lg-4 themed-grid-col">.col-6 .col-lg-4</div>
+    <div class="col-6 col-sm-4 themed-grid-col">.col-6 .col-sm-4</div>
+    <div class="col-6 col-sm-4 themed-grid-col">.col-6 .col-sm-4</div>
+    <div class="col-6 col-sm-4 themed-grid-col">.col-6 .col-sm-4</div>
+  </div>
+
+</div>
+<div class="container">
+  <h2>Row column</h2>
+  <p>Use the responsive .row-cols-* classes to quickly set the number of columns that best render your content and layout. Whereas normal .col-* classes apply to the individual columns (e.g., .col-md-4), the row columns classes are set on the parent .row as a shortcut. With .row-cols-auto you can give the columns their natural width.</p>
+  <div class="row row-cols-2 mb-2">
+    <div class="col themed-grid-col">Column</div>
+    <div class="col themed-grid-col">Column</div>
+    <div class="col themed-grid-col">Column</div>
+    <div class="col themed-grid-col">Column</div>
+  </div>
+  <div class="row row-cols-3 mb-2">
+    <div class="col themed-grid-col">Column</div>
+    <div class="col themed-grid-col">Column</div>
+    <div class="col themed-grid-col">Column</div>
+    <div class="col themed-grid-col">Column</div>
+  </div>
+  <div class="row row-cols-auto mb-2">
+    <div class="col themed-grid-col">Column</div>
+    <div class="col themed-grid-col">Column</div>
+    <div class="col themed-grid-col">Column</div>
+    <div class="col themed-grid-col">Column</div>
+  </div>
+    <div class="row row-cols-4 mb-2">
+    <div class="col themed-grid-col">Column</div>
+    <div class="col themed-grid-col">Column</div>
+    <div class="col themed-grid-col">Column</div>
+    <div class="col themed-grid-col">Column</div>
+  </div>
+  <div class="row row-cols-4 mb-2">
+    <div class="col themed-grid-col">Column</div>
+    <div class="col themed-grid-col">Column</div>
+    <div class="col-6 themed-grid-col">Column</div>
+    <div class="col themed-grid-col">Column</div>
+  </div>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 mb-2">
+    <div class="col themed-grid-col">Column</div>
+    <div class="col themed-grid-col">Column</div>
+    <div class="col themed-grid-col">Column</div>
+    <div class="col themed-grid-col">Column</div>
+  </div>
+
+</div>
+<div class="container">
+  <h2>Columns</h2>
+  <p>Learn how to modify columns with a handful of options for alignment, ordering, and offsetting thanks to our flexbox grid system. Plus, see how to use column classes to manage widths of non-grid elements.</p>
+  <h2>Alignment</h2>
+</div>
+<div class="container bg-success mb-2">
+    <div class="row align-items-start" style="height:10rem">
+    <div class="col themed-col">
+      One of three columns
+    </div>
+    <div class="col themed-col">
+      One of three columns
+    </div>
+    <div class="col themed-col">
+      One of three columns
+    </div>
+  </div>
+  </div>
+  <div class="container mb-2 bg-light text-dark">
+  
+  <div class="row align-items-center" style="height:10rem">
+    <div class="col themed-col">
+      One of three columns
+    </div>
+    <div class="col themed-col">
+      One of three columns
+    </div>
+    <div class="col themed-col">
+      One of three columns
+    </div>
+  </div>
+</div>
+<div class="container mb-2 bg-warning text-dark">
+  <div class="row align-items-end" style="height:10rem">
+    <div class="col themed-col">
+      One of three columns
+    </div>
+    <div class="col themed-col">
+      One of three columns
+    </div>
+    <div class="col themed-col">
+      One of three columns
+    </div>
+  </div>
+</div>
+<div class="container">
+  <h2>Horizontal alignment</h2>
+  <div class="row justify-content-start">
+    <div class="col-4 themed-col">
+      One of two columns
+    </div>
+    <div class="col-4 themed-col">
+      One of two columns
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-4 themed-col">
+      One of two columns
+    </div>
+    <div class="col-4 themed-col">
+      One of two columns
+    </div>
+  </div>
+  <div class="row justify-content-end">
+    <div class="col-4 themed-col">
+      One of two columns
+    </div>
+    <div class="col-4 themed-col">
+      One of two columns
+    </div>
+  </div>
+  <div class="row justify-content-around">
+    <div class="col-4 themed-col">
+      One of two columns
+    </div>
+    <div class="col-4 themed-col">
+      One of two columns
+    </div>
+  </div>
+  <div class="row justify-content-between">
+    <div class="col-4 themed-col">
+      One of two columns
+    </div>
+    <div class="col-4 themed-col">
+      One of two columns
+    </div>
+  </div>
+  <div class="row justify-content-evenly">
+    <div class="col-4 themed-col">
+      One of two columns
+    </div>
+    <div class="col-4 themed-col">
+      One of two columns
+    </div>
+  </div>
+</div>
+<div class="container">
+  <h2>Gutters</h2>
+  <p>Gutters are the padding between your columns, used to responsively space and align content in the Bootstrap grid system.</p>
+  <h3>How they work</h3>
+  <style type="text/css">ul li{list-style-type: bullet}</style>
+  <ul style="list-style-type:bullet">
+    <li><strong>Gutters are the gaps between column content, created by horizontal padding</strong>. We set padding-right and padding-left on each column, and use negative margin to offset that at the start and end of each row to align content.
+    </li>
+    <li><strong>Gutters start at 1.5rem (24px) wide.</strong> This allows us to match our grid to the padding and margin spacers scale.</li>
+    <li><strong> Gutters can be responsively adjusted.</strong> Use breakpoint-specific gutter classes to modify horizontal gutters, vertical gutters, and all gutters.</li>
+  </ul>
+  <h3>gx-* classes can be used to control the horizontal gutter widths</h3>
+
+  <div class="container overflow-hidden mb-2">
+    <h2 class="my-2">Horizontal Gutter</h2>
+    <div class="row gx-5">
+      <div class="col ">
+       <div class="p-3 border bg-light">Custom column padding</div>
+      </div>
+      <div class="col ">
+        <div class="p-3 border bg-light">Custom column padding</div>
+      </div>
+    </div>
+</div>
+<div class="container overflow-hidden mb-2">
+  <h3 class="my-2">Vertical Gutter</h3>
+  <div class="row gy-5">
+    <div class="col-6">
+      <div class="p-3 border bg-light">Custom column padding</div>
+    </div>
+    <div class="col-6">
+      <div class="p-3 border bg-light">Custom column padding</div>
+    </div>
+    <div class="col-6">
+      <div class="p-3 border bg-light">Custom column padding</div>
+    </div>
+    <div class="col-6">
+      <div class="p-3 border bg-light">Custom column padding</div>
+    </div>
+  </div>
+</div>
+<div class="container mb-2">
+  <h3 class="my-2">Vertical and horizontal Gutter</h3>
+  <div class="row g-2">
+    <div class="col-6">
+      <div class="p-3 border bg-light">Custom column padding</div>
+    </div>
+    <div class="col-6">
+      <div class="p-3 border bg-light">Custom column padding</div>
+    </div>
+    <div class="col-6">
+      <div class="p-3 border bg-light">Custom column padding</div>
+    </div>
+    <div class="col-6">
+      <div class="p-3 border bg-light">Custom column padding</div>
+    </div>
+  </div>
+  <h3 class="mt-2">No gutters</h3>
+  <div class="row g-0">
+    <div class="col-sm-6 col-md-8">.col-sm-6 .col-md-8</div>
+    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+  </div>
+</div>
+
+</div>
+
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 
